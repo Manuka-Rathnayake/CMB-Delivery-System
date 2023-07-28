@@ -5,19 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CMB_Delivery_Management.Model
 {
     internal class DAO
     {
-        internal static String ConnectionString { get; set; }
-        internal static SqlConnection Connection { get; set; }
-
-        internal DAO() 
-        {
-            ConnectionString = $"Data Source={Server.Name};Initial Catalog=BaggageDeliverySystem;Integrated Security=True";
-            Connection = new SqlConnection(ConnectionString) ;
-        }
+        internal static String ConnectionString { get; set; } = $"Data Source={Server.Name};Initial Catalog=BaggageDeliverySystem;Integrated Security=True";
 
         internal static bool VerifyUser(String username, String passwordHash, AccountType type)
         {
@@ -25,15 +19,16 @@ namespace CMB_Delivery_Management.Model
 
             try
             {
-                using (Connection)
+                using (SqlConnection Connection = new SqlConnection(ConnectionString))
                 {
-                    
-                    String ValidationQueury = "SELECT * FROM User WHERE username=@uname";
-                    SqlCommand ValidationCommand = new SqlCommand(ValidationQueury);
-                    ValidationCommand.Parameters.AddWithValue("@uname", username);
-
                     if (Connection.State == System.Data.ConnectionState.Closed)
                         Connection.Open();
+
+                    String ValidationQueury = "SELECT * FROM [dbo].[User] WHERE username=@uname";
+                    SqlCommand ValidationCommand = new SqlCommand(ValidationQueury, Connection);
+                    ValidationCommand.Parameters.AddWithValue("@uname", username);
+
+                    
 
                     SqlDataReader ValidationData = ValidationCommand.ExecuteReader();
 
@@ -50,7 +45,7 @@ namespace CMB_Delivery_Management.Model
                     {
                         User tempUser = new User();
                         tempUser.username = username;
-                        tempUser.passwordHash = ValidationData.GetString(1);
+                        tempUser.passwordHash = ValidationData.GetString(1).Trim();
                         tempUser.type = User.ParseAccountType(ValidationData.GetString(2));
 
                         if (passwordHash.Equals(tempUser.passwordHash)
@@ -63,7 +58,7 @@ namespace CMB_Delivery_Management.Model
                                 Connection.Close();
                             }
 
-                            return false;
+                            return true;
                         }
 
                         if (Connection.State == System.Data.ConnectionState.Open)
@@ -80,15 +75,48 @@ namespace CMB_Delivery_Management.Model
             {
                 Debug.WriteLine(ex.ToString());
             }
-            finally
-            {
-                if (Connection.State == System.Data.ConnectionState.Open)
-                {
-                    Connection.Close();
-                }
-            }
 
             return false;
+        }
+
+        internal static List<Driver> FetchDrivers()
+        {
+            var drivers = new List<Driver>(); 
+            
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(ConnectionString))
+                {
+                    if (Connection.State == System.Data.ConnectionState.Closed)
+                        Connection.Open();
+                    // DriverID, DriverName, DriverDateJoined, DriverAge
+                    String ReadDriverQueury = "SELECT * FROM [dbo].[Driver]";
+                    SqlCommand ReadDriverCommand = new SqlCommand(ReadDriverQueury, Connection);
+
+
+
+                    SqlDataReader DriverData = ReadDriverCommand.ExecuteReader();
+
+                    while (DriverData.Read())
+                    {
+                        Driver driver = new Driver()
+                        {
+                            driverID = DriverData.GetInt32(0),
+                            driverName = DriverData.GetString(1),
+                            driverDateJoined = DriverData.GetDateTime(2),
+                            driverAge = DriverData.GetInt32(3)
+                        };
+
+                        drivers.Add(driver);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+
+            return drivers;
         }
     }
 }

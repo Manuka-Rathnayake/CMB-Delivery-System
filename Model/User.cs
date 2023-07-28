@@ -21,12 +21,12 @@ namespace CMB_Delivery_Management.Model
 
         internal static AccountType ParseAccountType(string value)
         {
-            switch (value)
+            switch (value.Trim())
             {
                 case "Admin": return AccountType.Admin;
                 case "Driver": return AccountType.Driver;
-                default: return AccountType.None;
             }
+            return AccountType.None;
         }
     }
 

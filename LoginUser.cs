@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.Diagnostics;
+using CMB_Delivery_Management.Model;
+using CMB_Delivery_Management.Helpers;
+using System.IO;
 
 namespace CMB_Delivery_Management
 {
@@ -17,19 +22,27 @@ namespace CMB_Delivery_Management
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void b_login_Click(object sender, EventArgs e)
         {
+            var username = tb_username.Text;
+            var passwordHash = MD5Helper.CreateMD5(tb_password.Text);
+
+            var isValidUser = DAO.VerifyUser(username, passwordHash, AccountType.Admin);
+
+
+            if (isValidUser)
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+                this.Hide();
+            }
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void LoginUser_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            Instances.SplashInstance.Show();
         }
     }
 }

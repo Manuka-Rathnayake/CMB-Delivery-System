@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CMB_Delivery_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -16,29 +18,6 @@ namespace CMB_Delivery_Management
         public Drivers()
         {
             InitializeComponent();
-
-            panel6.MouseEnter += Panel_MouseEnter;
-            panel6.MouseLeave += Panel_MouseLeave;
-         
-
-            panel5.MouseEnter += Panel_MouseEnter;
-            panel5.MouseLeave += Panel_MouseLeave;
-            
-
-            panel10.MouseEnter += Panel_MouseEnter;
-            panel10.MouseLeave += Panel_MouseLeave;
-            
-
-            panel4.MouseEnter += Panel_MouseEnter;
-            panel4.MouseLeave += Panel_MouseLeave;
-          
-
-            panel7.MouseEnter += Panel_MouseEnter;
-            panel7.MouseLeave += Panel_MouseLeave;
-         
-
-            panel8.MouseEnter += Panel_MouseEnter;
-            panel8.MouseLeave += Panel_MouseLeave;
 
             panel2.Paint += panel2_Paint;
 
@@ -63,7 +42,7 @@ namespace CMB_Delivery_Management
 
         private void Panel_MouseEnter(object sender, EventArgs e)
         {
-            Panel panel = sender as Panel;
+            var panel = sender as DriverCard;
             if (panel != null)
             {
                 panel.BackColor = Color.RoyalBlue;
@@ -72,7 +51,7 @@ namespace CMB_Delivery_Management
 
         private void Panel_MouseLeave(object sender, EventArgs e)
         {
-            Panel panel = sender as Panel;
+            var panel = sender as DriverCard;
             if (panel != null)
             {
                 panel.BackColor = Color.White;
@@ -99,6 +78,24 @@ namespace CMB_Delivery_Management
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void Drivers_Load(object sender, EventArgs e)
+        {
+            var drivers = DAO.FetchDrivers();
+            Debug.WriteLine(drivers.Count);
+
+            foreach(var driver in drivers)
+            {
+                DriverCard driverCard = new DriverCard();
+                driverCard.DriverName.Text = driver.driverName;
+                driverCard.DriverID.Text = $"#{driver.driverID.ToString().PadLeft(4, '0')}";
+                driverCard.MouseEnter += Panel_MouseEnter;
+                driverCard.MouseLeave += Panel_MouseLeave;
+
+                DriverList.Controls.Add(driverCard);
+            }
 
         }
     }

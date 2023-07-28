@@ -77,6 +77,13 @@
     <Compile Include="DeliveryForm.Designer.cs">
       <DependentUpon>DeliveryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriverCard.cs">
+      <SubType>UserControl</SubType>
+      <Generator>DriverCard</Generator>
+    </Compile>
+    <Compile Include="DriverCard.Designer.cs">
+      <DependentUpon>DriverCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Driverdelivery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +102,8 @@
     <Compile Include="Driver_details.designer.cs">
       <DependentUpon>Driver_details.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\GraphicsExtension.cs" />
+    <Compile Include="Helpers\MD5Helper.cs" />
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,9 +117,16 @@
       <DependentUpon>LoginUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DAO.cs" />
+    <Compile Include="Model\Driver.cs" />
     <Compile Include="Model\Instances.cs" />
     <Compile Include="Model\Server.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="RoundedPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RoundedPanel.Designer.cs">
+      <DependentUpon>RoundedPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeliveryForm.resx">
       <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverCard.resx">
+      <DependentUpon>DriverCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Driverdelivery.resx">
       <DependentUpon>Driverdelivery.cs</DependentUpon>
@@ -159,6 +178,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RoundedPanel.resx">
+      <DependentUpon>RoundedPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
