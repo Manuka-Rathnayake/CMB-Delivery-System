@@ -242,7 +242,6 @@
             this.panel6.Size = new System.Drawing.Size(502, 106);
             this.panel6.TabIndex = 18;
             this.panel6.Click += new System.EventHandler(this.panel6_Click);
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // pictureBox1
             // 
@@ -277,7 +276,6 @@
             this.label15.Size = new System.Drawing.Size(84, 20);
             this.label15.TabIndex = 22;
             this.label15.Text = "Car Driver";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label17
             // 
@@ -301,7 +299,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(502, 106);
             this.panel5.TabIndex = 1;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // pictureBox2
             // 
@@ -416,7 +413,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(502, 106);
             this.panel4.TabIndex = 18;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // pictureBox4
             // 

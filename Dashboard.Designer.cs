@@ -118,7 +118,6 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Drivers";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -294,7 +293,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -16,15 +16,5 @@ namespace CMB_Delivery_Management
         {
             InitializeComponent();
         }
-
-        private void LoginAdmin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

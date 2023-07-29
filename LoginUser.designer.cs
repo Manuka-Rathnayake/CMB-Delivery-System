@@ -99,7 +99,6 @@
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(452, 22);
             this.tb_username.TabIndex = 18;
-            this.tb_username.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // b_login
             // 
@@ -125,7 +124,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "User";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -136,7 +134,6 @@
             this.label1.Size = new System.Drawing.Size(487, 36);
             this.label1.TabIndex = 15;
             this.label1.Text = "Welcome to CMB Baggage Delivery";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // LoginUser
             // 

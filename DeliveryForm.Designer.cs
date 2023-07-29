@@ -157,7 +157,6 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Header
             // 
@@ -171,7 +170,6 @@
             this.Header.TabIndex = 4;
             this.Header.Text = "DELIVERY FORM";
             this.Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Header.Click += new System.EventHandler(this.label1_Click);
             // 
             // label1
             // 
@@ -183,7 +181,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Baggage ID : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // label2
             // 
@@ -195,7 +192,6 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Driver ID : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // description
             // 
@@ -206,7 +202,6 @@
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(448, 232);
             this.description.TabIndex = 17;
-            this.description.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label3
             // 
@@ -229,7 +224,6 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Contact No :  ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
@@ -250,7 +244,6 @@
             this.Baggage.Name = "Baggage";
             this.Baggage.Size = new System.Drawing.Size(169, 42);
             this.Baggage.TabIndex = 22;
-            this.Baggage.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
             // 
             // Address
             // 
@@ -280,7 +273,6 @@
             this.tempbox.Name = "tempbox";
             this.tempbox.Size = new System.Drawing.Size(448, 42);
             this.tempbox.TabIndex = 25;
-            this.tempbox.TextChanged += new System.EventHandler(this.textBox5_TextChanged_1);
             // 
             // button3
             // 
@@ -333,7 +325,6 @@
             this.status.TabIndex = 32;
             this.status.Text = "STATUS : PENDING ";
             this.status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.status.Click += new System.EventHandler(this.label9_Click);
             // 
             // button6
             // 
@@ -363,7 +354,6 @@
             this.comboBox1.Size = new System.Drawing.Size(169, 26);
             this.comboBox1.TabIndex = 34;
             this.comboBox1.Text = "Select Driver";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // DeliveryForm
             // 
@@ -390,7 +380,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "DeliveryForm";
             this.Text = "DeliveryForm";
-            this.Load += new System.EventHandler(this.DeliveryForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -44,21 +44,11 @@ namespace CMB_Delivery_Management
 
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void panel6_Click(object sender, EventArgs e)
         {
             Driver_details driverDetailsForm = new Driver_details();
             driverDetailsForm.Show();
             this.Close();
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-                 
         }
 
         private void Panel_MouseEnter(object sender, EventArgs e)
@@ -79,11 +69,6 @@ namespace CMB_Delivery_Management
             }
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             Panel panel = (Panel)sender;
@@ -95,11 +80,6 @@ namespace CMB_Delivery_Management
 
                 e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, panel.Width - 1, panel.Height - 1));
             }
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

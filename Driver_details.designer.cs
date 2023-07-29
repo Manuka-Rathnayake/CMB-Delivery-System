@@ -56,7 +56,6 @@
             this.DriverDelete.TabIndex = 18;
             this.DriverDelete.Text = "Delete";
             this.DriverDelete.UseVisualStyleBackColor = false;
-            this.DriverDelete.Click += new System.EventHandler(this.button1_Click);
             // 
             // DriverEdit
             // 
