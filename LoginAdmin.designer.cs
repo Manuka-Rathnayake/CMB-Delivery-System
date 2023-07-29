@@ -37,6 +37,7 @@
             this.cb_rememberme = new System.Windows.Forms.CheckBox();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.b_login = new System.Windows.Forms.Button();
+            this.b_back1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -129,18 +130,33 @@
             this.b_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_login.ForeColor = System.Drawing.Color.White;
-            this.b_login.Location = new System.Drawing.Point(125, 515);
+            this.b_login.Location = new System.Drawing.Point(305, 521);
             this.b_login.Name = "b_login";
-            this.b_login.Size = new System.Drawing.Size(334, 46);
+            this.b_login.Size = new System.Drawing.Size(224, 46);
             this.b_login.TabIndex = 8;
             this.b_login.Text = "Login";
             this.b_login.UseVisualStyleBackColor = false;
+            // 
+            // b_back1
+            // 
+            this.b_back1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.b_back1.FlatAppearance.BorderSize = 0;
+            this.b_back1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_back1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_back1.ForeColor = System.Drawing.Color.White;
+            this.b_back1.Location = new System.Drawing.Point(46, 521);
+            this.b_back1.Name = "b_back1";
+            this.b_back1.Size = new System.Drawing.Size(224, 46);
+            this.b_back1.TabIndex = 15;
+            this.b_back1.Text = "Back";
+            this.b_back1.UseVisualStyleBackColor = false;
             // 
             // LoginAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 607);
+            this.Controls.Add(this.b_back1);
             this.Controls.Add(this.b_forgotpassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_password);
@@ -169,5 +185,6 @@
         private System.Windows.Forms.CheckBox cb_rememberme;
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.Button b_login;
+        private System.Windows.Forms.Button b_back1;
     }
 }

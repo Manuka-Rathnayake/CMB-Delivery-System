@@ -34,9 +34,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cb_rememberme = new System.Windows.Forms.CheckBox();
             this.tb_username = new System.Windows.Forms.TextBox();
-            this.b_login = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.b_back2 = new System.Windows.Forms.Button();
+            this.b_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // b_forgotpassword
@@ -101,20 +102,6 @@
             this.tb_username.TabIndex = 18;
             this.tb_username.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // b_login
-            // 
-            this.b_login.BackColor = System.Drawing.Color.RoyalBlue;
-            this.b_login.FlatAppearance.BorderSize = 0;
-            this.b_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_login.ForeColor = System.Drawing.Color.White;
-            this.b_login.Location = new System.Drawing.Point(127, 524);
-            this.b_login.Name = "b_login";
-            this.b_login.Size = new System.Drawing.Size(334, 46);
-            this.b_login.TabIndex = 17;
-            this.b_login.Text = "Login";
-            this.b_login.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -138,18 +125,47 @@
             this.label1.Text = "Welcome to CMB Baggage Delivery";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // b_back2
+            // 
+            this.b_back2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.b_back2.FlatAppearance.BorderSize = 0;
+            this.b_back2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_back2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_back2.ForeColor = System.Drawing.Color.White;
+            this.b_back2.Location = new System.Drawing.Point(51, 545);
+            this.b_back2.Name = "b_back2";
+            this.b_back2.Size = new System.Drawing.Size(224, 46);
+            this.b_back2.TabIndex = 25;
+            this.b_back2.Text = "Back";
+            this.b_back2.UseVisualStyleBackColor = false;
+            // 
+            // b_login
+            // 
+            this.b_login.BackColor = System.Drawing.Color.RoyalBlue;
+            this.b_login.FlatAppearance.BorderSize = 0;
+            this.b_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_login.ForeColor = System.Drawing.Color.White;
+            this.b_login.Location = new System.Drawing.Point(308, 545);
+            this.b_login.Name = "b_login";
+            this.b_login.Size = new System.Drawing.Size(224, 46);
+            this.b_login.TabIndex = 24;
+            this.b_login.Text = "Login";
+            this.b_login.UseVisualStyleBackColor = false;
+            // 
             // LoginUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 642);
+            this.Controls.Add(this.b_back2);
+            this.Controls.Add(this.b_login);
             this.Controls.Add(this.b_forgotpassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cb_rememberme);
             this.Controls.Add(this.tb_username);
-            this.Controls.Add(this.b_login);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoginUser";
@@ -167,8 +183,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cb_rememberme;
         private System.Windows.Forms.TextBox tb_username;
-        private System.Windows.Forms.Button b_login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button b_back2;
+        private System.Windows.Forms.Button b_login;
     }
 }
