@@ -22,7 +22,7 @@ namespace CMB_Delivery_Management
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void tb_password_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -92,6 +92,7 @@
             this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(469, 22);
             this.tb_password.TabIndex = 12;
+            this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
             // 
             // label4
             // 
@@ -120,7 +121,6 @@
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(470, 22);
             this.tb_username.TabIndex = 9;
-            this.tb_username.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // b_login
             // 
