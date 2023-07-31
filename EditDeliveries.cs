@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace CMB_Delivery_Management
 {
-    public partial class LoginUser : Form
+    public partial class EditDeliveries : Form
     {
-        public LoginUser()
+        public EditDeliveries()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

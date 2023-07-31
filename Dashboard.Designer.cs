@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,22 +36,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.DashboardLogOut = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.AddDelivery = new System.Windows.Forms.Button();
-            this.ViewDelivery = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DeliveryStatusChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DeliveryStatusChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -168,20 +162,19 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Dashboard";
             // 
-            // DashboardLogOut
+            // button5
             // 
-            this.DashboardLogOut.BackColor = System.Drawing.Color.RoyalBlue;
-            this.DashboardLogOut.FlatAppearance.BorderSize = 0;
-            this.DashboardLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DashboardLogOut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DashboardLogOut.ForeColor = System.Drawing.Color.White;
-            this.DashboardLogOut.Location = new System.Drawing.Point(1049, 12);
-            this.DashboardLogOut.Name = "DashboardLogOut";
-            this.DashboardLogOut.Size = new System.Drawing.Size(121, 49);
-            this.DashboardLogOut.TabIndex = 8;
-            this.DashboardLogOut.Text = "Log Out";
-            this.DashboardLogOut.UseVisualStyleBackColor = false;
-            this.DashboardLogOut.Click += new System.EventHandler(this.DashboardLogOut_Click);
+            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(1049, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(121, 49);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Log Out";
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -189,7 +182,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(372, 112);
+            this.panel3.Location = new System.Drawing.Point(422, 102);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 132);
             this.panel3.TabIndex = 9;
@@ -222,11 +215,10 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(372, 356);
+            this.panel4.Location = new System.Drawing.Point(741, 102);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(254, 132);
             this.panel4.TabIndex = 10;
-            
             // 
             // label3
             // 
@@ -250,60 +242,41 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Active Drivers";
             // 
-            // AddDelivery
+            // button6
             // 
-            this.AddDelivery.BackColor = System.Drawing.Color.RoyalBlue;
-            this.AddDelivery.FlatAppearance.BorderSize = 0;
-            this.AddDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddDelivery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddDelivery.ForeColor = System.Drawing.Color.White;
-            this.AddDelivery.Location = new System.Drawing.Point(404, 269);
-            this.AddDelivery.Name = "AddDelivery";
-            this.AddDelivery.Size = new System.Drawing.Size(180, 44);
-            this.AddDelivery.TabIndex = 11;
-            this.AddDelivery.Text = "Add delivery";
-            this.AddDelivery.UseVisualStyleBackColor = false;
-            this.AddDelivery.Click += new System.EventHandler(this.button6_Click);
+            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(422, 260);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(254, 49);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Add delivery";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // ViewDelivery
+            // button7
             // 
-            this.ViewDelivery.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ViewDelivery.FlatAppearance.BorderSize = 0;
-            this.ViewDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewDelivery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewDelivery.ForeColor = System.Drawing.Color.White;
-            this.ViewDelivery.Location = new System.Drawing.Point(404, 531);
-            this.ViewDelivery.Name = "ViewDelivery";
-            this.ViewDelivery.Size = new System.Drawing.Size(180, 44);
-            this.ViewDelivery.TabIndex = 12;
-            this.ViewDelivery.Text = "View deliveries\r\n";
-            this.ViewDelivery.UseVisualStyleBackColor = false;
-            this.ViewDelivery.Click += new System.EventHandler(this.ViewDelivery_Click);
+            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(741, 260);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(254, 49);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "View deliveries";
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.DeliveryStatusChart);
-            this.panel2.Location = new System.Drawing.Point(693, 94);
+            this.panel2.Location = new System.Drawing.Point(318, 348);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(454, 481);
+            this.panel2.Size = new System.Drawing.Size(862, 305);
             this.panel2.TabIndex = 13;
-            // 
-            // DeliveryStatusChart
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.DeliveryStatusChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.DeliveryStatusChart.Legends.Add(legend2);
-            this.DeliveryStatusChart.Location = new System.Drawing.Point(0, 0);
-            this.DeliveryStatusChart.Name = "DeliveryStatusChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "DeliveryStatusChart";
-            this.DeliveryStatusChart.Series.Add(series2);
-            this.DeliveryStatusChart.Size = new System.Drawing.Size(454, 481);
-            this.DeliveryStatusChart.TabIndex = 0;
-            this.DeliveryStatusChart.Text = "chart1";
             // 
             // Dashboard
             // 
@@ -312,11 +285,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 653);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.ViewDelivery);
-            this.Controls.Add(this.AddDelivery);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.DashboardLogOut);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
@@ -328,8 +301,6 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DeliveryStatusChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,22 +311,21 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button DashboardLogOut;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button AddDelivery;
-        private System.Windows.Forms.Button ViewDelivery;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataVisualization.Charting.Chart DeliveryStatusChart;
     }
 }
 

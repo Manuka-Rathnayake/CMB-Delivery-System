@@ -1,5 +1,4 @@
-﻿using CMB_Delivery_Management.Converters;
-using Splash_Screen;
+﻿using Splash_Screen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +10,6 @@ namespace CMB_Delivery_Management.Model
     internal static class Instances
     {
         internal static SplashScreen SplashInstance;
-        internal static Object LoggedUser;
-        internal static AccountType LoggedUserAccountType;
+        internal static User LoggedUser;
     }
 }

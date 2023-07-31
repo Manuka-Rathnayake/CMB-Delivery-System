@@ -46,10 +46,5 @@ namespace CMB_Delivery_Management
         {
             
         }
-
-        public static implicit operator Driverdelivery(Dashboard v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
