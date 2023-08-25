@@ -27,6 +27,7 @@ namespace CMB_Delivery_Management
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+
             try
             {
                 orderid.Text = SelecedtedDeliveryId.ToString();
@@ -37,6 +38,7 @@ namespace CMB_Delivery_Management
                     connection.Open();
 
                     string selectStatusQuery = "SELECT PickupStatus, DeliveryStatus,ConfirmOrder,OngoingDelivery FROM DeliveryInfo WHERE DeliveryId = @DeliveryId";
+                   
                     SqlCommand selectCommand = new SqlCommand(selectStatusQuery, connection);
                     selectCommand.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
 
@@ -52,25 +54,50 @@ namespace CMB_Delivery_Management
                             if (deliveryStatus == "Successfull")
                             {
                                 progressBar1.Value = progressBar1.Maximum;
+                                ConfirmOrder.Enabled = false;
+                                BaggagePickUp.Enabled = false;
+                                OnGoingDelivery.Enabled = false;
+                                SuccessDelivery.Enabled = false;
                             }
                             else if (ongoingdelivery == "Ongoing")
                             {
                                 progressBar1.Value = (int)(progressBar1.Maximum * 0.75);
+                                ConfirmOrder.Enabled = false;
+                                BaggagePickUp.Enabled = false;
+                                OnGoingDelivery.Enabled = false;
+                                SuccessDelivery.Enabled = true;
                             }
                             else if (pickupStatus == "Baggage Picked Up")
                             {
                                 progressBar1.Value = (int)(progressBar1.Maximum * 0.50);
+                                ConfirmOrder.Enabled = false;
+                                BaggagePickUp.Enabled = false;
+                                OnGoingDelivery.Enabled = true;
+                                SuccessDelivery.Enabled = false;
                             }
                             else if (confirmorder == "Confirmed")
                             {
                                 progressBar1.Value = (int)(progressBar1.Maximum * 0.25);
+                                ConfirmOrder.Enabled = false;
+                                BaggagePickUp.Enabled = true;
+                                OnGoingDelivery.Enabled = false;
+                                SuccessDelivery.Enabled = false;
                             }
                             else
                             {
                                 progressBar1.Value = 0;
+                                ConfirmOrder.Enabled = true;
+                                BaggagePickUp.Enabled = false;
+                                OnGoingDelivery.Enabled = false;
+                                SuccessDelivery.Enabled = false;
                             }
+
                         }
                     }
+
+   
+
+                    
 
                     connection.Close();
                 }
@@ -114,6 +141,9 @@ namespace CMB_Delivery_Management
                 MessageBox.Show($"Error: {ex.Message}", "Error");
             }
 
+            BaggagePickUp.Enabled = true;
+            ConfirmOrder.Enabled = false;
+
         }
 
         private void BaggagePickUp_Click(object sender, EventArgs e)
@@ -146,6 +176,9 @@ namespace CMB_Delivery_Management
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error");
             }
+            OnGoingDelivery.Enabled = true;
+            BaggagePickUp.Enabled = false;
+
         }
 
         private void OnGoingDelivery_Click(object sender, EventArgs e)
@@ -178,6 +211,8 @@ namespace CMB_Delivery_Management
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error");
             }
+            SuccessDelivery.Enabled = true;
+            OnGoingDelivery.Enabled = false;
         }
         private void SuccessDelivery_Click(object sender, EventArgs e)
         {
@@ -210,6 +245,12 @@ namespace CMB_Delivery_Management
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error");
             }
+
+            ConfirmOrder.Enabled = false;
+            BaggagePickUp.Enabled = false;
+            OnGoingDelivery.Enabled = false;
+            SuccessDelivery.Enabled = false;
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
