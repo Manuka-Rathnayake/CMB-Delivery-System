@@ -1,4 +1,5 @@
-﻿using CMB_Delivery_Management.Model;
+﻿using CMB_Delivery_Management.Helpers;
+using CMB_Delivery_Management.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,6 +73,7 @@ namespace CMB_Delivery_Management
                     return;
                 }
 
+                (String, String) cred = GenerateCredentials(Did);
 
                 string DName = DriverName.Text;
                 string Date = Driver_DateJoined.Text;
@@ -95,6 +97,23 @@ namespace CMB_Delivery_Management
                     MessageBox.Show("Insertion failed.");
                 }
 
+                string query_cred = $"INSERT INTO Driver VALUES (@driverId, @username, @password)";
+                SqlCommand command_cred = new SqlCommand(query_cred, connection);
+                command_cred.Parameters.AddWithValue("@driverId", Did);
+                command_cred.Parameters.AddWithValue("@username", cred.Item1);
+                command_cred.Parameters.AddWithValue("@password", cred.Item2);
+
+
+                int rowsAffected_cred = command_cred.ExecuteNonQuery();
+                if (rowsAffected_cred > 0)
+                {
+                    MessageBox.Show("Driver Login information inserted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Insertion failed.");
+                }
+
                 connection.Close();
             }
             catch (Exception ex)
@@ -103,6 +122,11 @@ namespace CMB_Delivery_Management
             }
 
 
+        }
+
+        private (String, String) GenerateCredentials(String id)
+        {
+            return ($"driver{id}", Hashing.CalculateMD5($"driverpass{id}"));
         }
     }
 }
